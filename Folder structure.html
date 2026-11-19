@@ -1,0 +1,33 @@
+finance-tracker/
+├── README.md
+├── backend/
+│   ├── package.json
+│   ├── .env.example
+│   ├── server.js                 # app entry, middleware, routes
+│   ├── config/
+│   │   ├── db.js                 # MongoDB connection
+│   ├── models/
+│   │   ├── User.js               # user schema (bcrypt hashing in pre-save hook)
+│   │   └── Transaction.js        # transaction schema
+│   ├── middleware/auth.js        # JWT check -> req.userId
+│   ├── routes/
+│   │   ├── auth.js               # register, login, me, forgot/reset password
+│   │   └── transactions.js       # report CRUD + summary
+│   └── utils/mailer.js           # sends reset code (or logs it in dev)
+└── mobile/
+    ├── App.js                    # providers + navigator
+    ├── .env.example              # API URL for physical devices
+    └── src/
+        ├── config.js             # API URL and display settings
+        ├── api/client.js         # fetch wrapper (JSON, JWT, ApiError)
+        ├── context/
+        │   ├── ThemeContext.js       # light/dark/system
+        │   ├── AuthContext.js        # session, login/register/logout/reset
+        │   └── TransactionContext.js # transactions, CRUD, balance summary
+        ├── utils/{format.js, validation.js}
+        ├── components/{ui.js, TransactionItem.js}
+        ├── navigation/RootNavigator.js
+        └── screens/
+            ├── Screen.js
+            ├── LoginScreen.js  RegisterScreen.js  ForgotPasswordScreen.js
+            ├── DashboardScreen.js  HistoryScreen.js  TransactionFormScreen.js

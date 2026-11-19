@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Moni Check",
+    "slug": "moni-check-finance-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/moni-check-icon.png",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#173B70",
+        "foregroundImage": "./assets/moni-check-mark.png"
+      }
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-asset"
+    ]
+  }
+}
